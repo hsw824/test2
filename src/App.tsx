@@ -6,18 +6,19 @@ import "./App.css";
 
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [user, setUser] = useState([
     {
-      id: 0,
+      id: uuidv4(),
       userName: "김민수",
       grade: "새싹1",
       age: "21",
       gender: "남자",
     },
     {
-      id: 1,
+      id: uuidv4(),
       userName: "홍길동",
       grade: "새싹2",
       age: "21",
@@ -26,7 +27,7 @@ function App() {
   ]);
 
   const handleEdit = (newInfo: {
-    id: number;
+    id: string;
     userName: string;
     grade: string;
     age: string;

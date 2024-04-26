@@ -1,11 +1,11 @@
-import { useState } from "react";
 import styles from "./Admin.module.scss";
 import AdminItem from "./AdminItem";
+
 import { useNavigate } from "react-router-dom";
 
 interface UserInfoProps {
   userInfo: {
-    id: number;
+    id: string;
     userName: string;
     grade: string;
     age: string;

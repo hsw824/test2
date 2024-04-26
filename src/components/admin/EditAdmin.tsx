@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./EditAdmin.module.scss";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface newItemType {
-  id: number;
+  id: string;
   userName: string;
   grade: string;
   age: string;
@@ -38,7 +39,7 @@ export default function AdminEdit({
     event.preventDefault();
     onEdit({
       ...input,
-      id: 4,
+      id: uuidv4(),
     });
     setInput({ userName: "", grade: "", age: "", gender: "" });
   };

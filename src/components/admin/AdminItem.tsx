@@ -2,7 +2,7 @@ import styles from "./AdminItem.module.scss";
 
 interface UserInfoProps {
   userInfo: {
-    id: number;
+    id: string;
     userName: string;
     grade: string;
     age: string;
