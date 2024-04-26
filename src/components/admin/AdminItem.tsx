@@ -7,16 +7,20 @@ interface UserInfoProps {
     grade: string;
     age: string;
     gender: string;
-  };
+  }[];
 }
 
 export default function AdminItem({ userInfo }: UserInfoProps) {
   return (
-    <div className={styles.container} key={userInfo.id}>
-      <p>이름:{userInfo.userName}</p>
-      <p>등급:{userInfo.grade}</p>
-      <p>나이:{userInfo.age}</p>
-      <p>성별:{userInfo.gender}</p>
-    </div>
+    <>
+      {userInfo.map((item) => (
+        <div className={styles.container} key={item.id}>
+          <p>이름:{item.userName}</p>
+          <p>등급:{item.grade}</p>
+          <p>나이:{item.age}</p>
+          <p>성별:{item.gender}</p>
+        </div>
+      ))}
+    </>
   );
 }
